@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: dbt_model_source1        # this is your schema name (or logical group name)
+    database: dbt_dev_db
+    schema: dbt_sch
+    tables:
+      - name: emp        # this is the actual table name in Snowflake
