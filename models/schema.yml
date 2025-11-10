@@ -6,3 +6,37 @@ sources:
     schema: dbt_sch
     tables:
       - name: emp        # this is the actual table name in Snowflake
+      - name: dept
+
+
+
+models:
+  - name: stg_emp
+    description: "Cleaned and standardized employee data from the raw EMP table"
+    columns:
+      - name: emp_id
+        description: "Unique Employee ID"
+        tests:
+          - not_null
+          - unique
+      - name: dept_id
+        description: "Department number"
+      - name: salary
+        description: "Employee salary rounded to 2 decimals"
+
+
+# below model is not exists, so this simple pass by saying that this model does not match to any of the model
+# dbt test --select stg_emp123
+  - name: stg_emp123 
+    description: "Cleaned and standardized employee data from the raw EMP table"
+    columns:
+      - name: emp_id
+        description: "Unique Employee ID"
+        tests:
+          - not_null
+          - unique
+      - name: dept_id
+        description: "Department number"
+      - name: salary
+        description: "Employee salary rounded to 2 decimals"
+
