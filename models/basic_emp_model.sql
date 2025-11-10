@@ -1,13 +1,13 @@
 {{ config
 (
-    materialized='view'
+    materialized='table'
     ) 
 }}
 
 WITH source AS (
     -- Step 1: Pull data from Snowflake raw table
     SELECT * 
-    FROM {{ source('raw', 'emp') }}
+    FROM {{ source('dbt_model_source1', 'emp') }}
 ),
 
 cleaned AS (
