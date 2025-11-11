@@ -1,0 +1,5 @@
+{{ config(materialized='view') }}
+
+    -- Step 1: Pull data from Snowflake raw table
+    SELECT * 
+    FROM {{ source('dbt_model_source1', 'kiran_table') }}

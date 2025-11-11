@@ -1,0 +1,8 @@
+models:
+- name: sample_kiran
+  description: This model creates a view by selecting all data from the 'kiran_table'
+    in the 'dbt_model_source1' source. It is used to provide a comprehensive view
+    of the raw data for further analysis or transformation.
+  columns:
+  - name: quantity_number
+    description: Represents the quantity of items or units in the dataset.

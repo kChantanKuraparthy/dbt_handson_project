@@ -7,7 +7,9 @@ sources:
     tables:
       - name: emp        # this is the actual table name in Snowflake
       - name: dept
+      - name: kiran_table
 
+      
 
 
 models:
